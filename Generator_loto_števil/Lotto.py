@@ -12,7 +12,6 @@ def inputNum():
         global x
         x = int(raw_input('\nPlease enter how many random numbers would\n'
                           'you like to have (1-39): '))
-
     except ValueError:
         print("Input is not a number! Try again! ")
         inputNum()
