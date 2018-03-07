@@ -24,7 +24,7 @@ def generator(num):
     count = 0
 
     while count < num:                      # Število ižrebanih številk zagotovimo s štetjem vnesenih številk v seznam.
-        randNum = random.randint(1, 39)     # Nakljućno ižrebana številka (1-39)
+        randNum = random.randint(1, 39)     # Naključno ižrebana številka (1-39)
         if randNum not in numList:
             numList.append(randNum)
             count += 1
