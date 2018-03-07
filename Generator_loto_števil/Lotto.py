@@ -12,7 +12,6 @@ def inputNum():
         global x
         x = int(raw_input('\nPlease enter how many random numbers would\n'
                           'you like to have (1-39): '))
-
     except ValueError:
         print("Input is not a number! Try again! ")
         inputNum()
@@ -25,7 +24,7 @@ def generator(num):
     count = 0
 
     while count < num:                      # Število ižrebanih številk zagotovimo s štetjem vnesenih številk v seznam.
-        randNum = random.randint(1, 39)     # Nakljućno ižrebana številka (1-39)
+        randNum = random.randint(1, 39)     # Naključno ižrebana številka (1-39)
         if randNum not in numList:
             numList.append(randNum)
             count += 1
