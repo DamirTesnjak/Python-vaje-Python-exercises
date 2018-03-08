@@ -10,24 +10,24 @@ while True:
                          "\nZa izhod vtipkaj 'exit' brez navednic! ")
 
     if inputNum.lower() == "exit":
-        print("\n-----------------------\nProgram je zaustavljen!")
+        print "\n-----------------------\nProgram je zaustavljen!" 
         break
 
     elif inputNum.isalpha() == True:
-        print("Vnos ni številka. Poskusite znova.")
+        print "Vnos ni številka. Poskusite znova." 
     else:
         inputNum = int(inputNum)
 
         if inputNum < 1 or inputNum > 100:
-            print("Vnesli ste število izven intervala! Poskusite znova")
+            print "Vnesli ste število izven intervala! Poskusite znova" 
         else:
             for i in range(1, inputNum + 1):
                 if i % 3 == 0 and not i % 5 == 0:
-                    print("fizz")
+                    print "fizz" 
                 elif i % 5 == 0 and not i % 3 == 0:
-                    print("buzz")
+                    print "buzz" 
                 elif i % 3 == 0 and i % 5 == 0:
-                    print("fizzbuzz")
+                    print "fizzbuzz" 
                 else:
-                    print(i)
+                    print i 
 
