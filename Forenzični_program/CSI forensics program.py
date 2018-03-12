@@ -103,8 +103,8 @@ while True:
 #                REZULTAT
 # --------------------------------------------------------------------------
 
-    negative_result = "Suspect DNA does NOT match DNA sample!"
-    positive_result = "!!!Suspect DNA does MATCH DNA sample!!!\n" + str(float((4 / match) * 100)) + "% match!\n"
+    negative_result = "Suspect DNA does NOT match DNA sample!\n" + str(float((match / 4) * 100)) + "% match!\n"
+    positive_result = "!!!Suspect DNA does MATCH DNA sample!!!\n" + str(float((match / 4) * 100)) + "% match!\n"
 
     if match == 4:
         print "\nCase: " + dataName + " " + positive_result
