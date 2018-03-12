@@ -1,7 +1,7 @@
 # -*- coding: UTF-8 -*-
 
 ''' Jedilni list
-    Author: Damir Tešnjak'''
+    Avthor: Damir Tešnjak'''
 
 with open("Jedilni_list.txt", "w+") as file:
     file.write("\n\n--------------------")
@@ -11,6 +11,8 @@ with open("Jedilni_list.txt", "w+") as file:
 print("----Jedilni list----"
       "\n\nZa prekinitev vpišite 'exit'"
       "\n--------------------")
+
+meni = {}
 
 while True:
 
@@ -24,8 +26,11 @@ while True:
         if cena == "exit":
             break
         else:
-            with open("Jedilni_list.txt", "a") as file:
-                file.write(jed + "---- " + cena + " EUR\n")
+            meni[jed] = cena
 
-            with open("Jedilni_list.txt", "r") as file:
-                print(file.read())
+with open("Jedilni_list.txt", "a") as file:
+    for jed in meni:
+        file.write(jed + "---- " + meni[jed] + " EUR\n")
+
+with open("Jedilni_list.txt", "r") as file:
+    print(file.read())
