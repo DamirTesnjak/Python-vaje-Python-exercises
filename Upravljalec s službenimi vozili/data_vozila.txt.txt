@@ -1,7 +1,2 @@
-001 Znamka: Chervolet Model: Cruze Prevoženi kilometri: 150000 km Datum servisa: 17-02-2017
-004 Znamka: Mercedez-Benz Model: A4 Prevoženi kilometri: 30000 km Datum servisa: 12-01-2017
-002 Znamka: Renualt Model: Clio Prevoženi kilometri: 115100 km Datum servisa: 12-03-2017
-003 Znamka: Renault Model: Megane Prevoženi kilometri: 220000 km Datum servisa: 12-05-2018
-005 Znamka: Yugo Model: Koral 60 Prevoženi kilometri: 450000 km Datum servisa: 15-04-2017
-006 Znamka: Ford Model: Focus Prevoženi kilometri: 150000 km Datum servisa: 12-04-2017
-007 Znamka: Daewoo Model: Lanos Prevoženi kilometri: 270000 km Datum servisa: 05-02-2017
+﻿001,Chervolet,Cruze,120000,12-03-2015
+002,Yugo,Florida,250000,12-06-2015
