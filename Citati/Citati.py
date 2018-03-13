@@ -1,3 +1,6 @@
+'''Citati
+    Avtor: Damir Tešnjak'''
+
 from BeautifulSoup import BeautifulSoup
 from urllib2 import urlopen
 import random
