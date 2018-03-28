@@ -38,7 +38,5 @@ def diagonals(grid):
         return diagonals[len(diagonals)/2:]
 
 	
-    #TEST print diagonals_length_four_or_over(dTLeft_BRight)[3:-3] + diagonals_length_four_or_over(dTRigth_BLeft)[3:-3]
-    return diagonals_length_four_or_over(dTLeft_BRight)[3:-3] + diagonals_length_four_or_over(dTRigth_BLeft)[3:-3]
-
-diagonals(grid)
+    diagonals = diagonals_length_four_or_over(dTLeft_BRight)[3:-3] + diagonals_length_four_or_over(dTRigth_BLeft)[3:-3]
+    return diagonals
