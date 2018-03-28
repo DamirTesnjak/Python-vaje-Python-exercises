@@ -176,7 +176,7 @@ def search_three_in_lines(grid):
                                     break
 
                             if diag <= 3 and diag < 6:
-                                if column_grid[diag + 1][4] != " ":
+                                if column_grid[diag + 1][3] != " ":
                                     targets.append(4)
                                     break
 
@@ -279,25 +279,35 @@ def search_three_in_lines(grid):
                        [" ", " ", " ", "X", "X", "X", " "],
                        [" ", " ", " ", " ", " ", " ", " "]]'''
 
-            for diag in range(1, 3):
+            for diag in range(7, 9):
                 diagonal = diagonals_grid[diag]
                 line = "".join(diagonal)
                 for pos in range(0, len(line) - len(opponentLines) + 1):
                     if line[pos: pos + 4] == opponentLines:
                         col = pos + 3  # empty space in diagonal
-                        if column_grid[-col - 2][col + 1] != " ":
-                            targets.append(7 - col - 1)
+                        if column_grid[col][6-diag-1] != " " or column_grid[col][6-diag] == " ":
+                            targets.append(col + 1)
                             break
+                        else:
+                            col = pos - 1
+                            if column_grid[col][-diag + 4] != " ":
+                                targets.append(col + 1)
+                                break
 
-            for diag in range(3, 5):
+            for diag in range(9, 11):
                 diagonal = diagonals_grid[diag]
                 line = "".join(diagonal)
                 for pos in range(0, len(line) - len(opponentLines) + 1):
                     if line[pos: pos + 4] == opponentLines:
-                        col = pos  # empty space in diagonal
-                        if column_grid[col + 1][-col - 1] != " ":
+                        col = pos + 3  # empty space in diagonal
+                        if column_grid[col + 1][-1] != " " or column_grid[col + 2][-1] != " ":
                             targets.append(col + 2)
                             break
+                        else:
+                            col = pos - 1
+                            if column_grid[col + 1][-diag + 5 + 1] != " ":
+                                targets.append(col + 2)
+                                break
 
 
 
@@ -319,7 +329,7 @@ def search_three_in_lines(grid):
     search_opt_six(diagonals_grid, targets, player_opt2, fix_pos1)
     search_opt_six(diagonals_grid, targets, player_opt3, fix_pos2)
     search_opt_seven(diagonals_grid, targets, player_opt2, fix_pos1)
-    search_opt_eight(diagonals_grid, targets, player_opt1)
+    #search_opt_eight(diagonals_grid, targets, player_opt1)
     #search_opt_nine(diagonals_grid, targets, player_opt1)
 
 
@@ -340,7 +350,7 @@ def search_three_in_lines(grid):
         search_opt_six(diagonals_grid, targets, Ai_opt3, fix_pos2)
         search_opt_seven(diagonals_grid, targets, Ai_opt2, fix_pos1)
         search_opt_seven(diagonals_grid, targets, Ai_opt3, fix_pos2)
-        search_opt_eight(diagonals_grid, targets, Ai_opt1)
+        #search_opt_eight(diagonals_grid, targets, Ai_opt1)
         #search_opt_nine(diagonals_grid, targets, Ai_opt1)
 
         if targets == []:
