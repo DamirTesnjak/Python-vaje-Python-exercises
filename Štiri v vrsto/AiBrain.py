@@ -1,23 +1,25 @@
 # -*- coding: UTF-8 -*-
 
 from random import randint
+from getDiagonals import *
 from getColumns import columns
-from getDiagonals import diagonals
 
 
 def search_three_in_lines(grid):
-
     targets = []
     column_grid = columns(grid)
-    diagonals_grid = diagonals(grid)
+    rotated_dTLeft_BRight = list(zip(*reversed(diagonals_TLeft_BRight(grid))))
+    rotated_dTRigth_BLeft = list(zip(*reversed(diagonals_TRigth_BLeft(grid))))
 
     Ai_opt1 = "OOO"
-    Ai_opt2 = "O OO"
-    Ai_opt3 = "OO O"
+    Ai_opt2 = "OO"
+    Ai_opt3 = "O OO"
+    Ai_opt4 = "OO O"
 
     player_opt1 = "XXX"
-    player_opt2 = "X XX"
-    player_opt3 = "XX X"
+    player_opt2 = "XX"
+    player_opt3 = "X XX"
+    player_opt4 = "XX X"
 
     fix_pos1 = 1  # za Ai_opt2 in player_opt2
     fix_pos2 = 2  # za Ai_opt3 in player_opt3
@@ -40,7 +42,6 @@ def search_three_in_lines(grid):
                     else:
                         if grid[row][pos - 1] == " ":
                             targets.append(pos)
-                            break
                         if grid[row][pos + 3] == " ":
                             targets.append(pos + 3 + 1)
                             break
@@ -68,248 +69,159 @@ def search_three_in_lines(grid):
                         targets.append(col + 1)
                         break
 
-    # Iskanje igralčevih 'X_XX' ali 'XX_X' v diagonali top-desno-spodaj-levo
-
-    def search_opt_four(diagonals_grid, targets, opponentLines, correction):
-        for diag in range(0, 3):
-            diagonal = diagonals_grid[diag]
-            line = "".join(diagonal)
-            for pos in range(0, len(line) - len(opponentLines) + 1) or line == "X XX" or line == "XX X":
-                if line[pos: pos + 4] == opponentLines:
-                    col = pos + correction  # empty space in diagonal
-                    if column_grid[-col - 2][col + 1] != " ":
-                        targets.append(7 - col - 1)
-                        break
-
-    def search_opt_five(diagonals_grid, targets, opponentLines, correction):
-        for diag in range(3, 6):
-            diagonal = diagonals_grid[diag]
-            line = "".join(diagonal)
-            for pos in range(0, len(line) - len(opponentLines) + 1) or line == "X XX" or line == "XX X":
-                if line[pos: pos + 4] == opponentLines:
-                    col = pos + correction  # empty space in diagonal
-                    if column_grid[-col - 1][col + 1 + diag - 3] != " ":
-                        targets.append(7 - col)
-                        break
-
-
-    # Iskanje igralčevih 'X_XX' ali 'XX_X' v diagonali spodaj-desno-top-levo
-
-    def search_opt_six(diagonals_grid, targets, opponentLines, correction):
-        for diag in range(6, 9):
-            diagonal = diagonals_grid[diag]
-            line = "".join(diagonal)
-            for pos in range(0, len(line) - len(opponentLines) + 1):
-                if line[pos: pos + 4] == opponentLines or line == "X XX" or line == "XX X":
-                    col = pos + correction  # empty space in diagonal
-                    if correction == 1:
-                        if column_grid[col][-diag + 5 - correction] != " ":
-                            targets.append(col + 1)
-                            break
-                        else:
-                            if column_grid[col][-diag + 5 - correction] != " ":
-                                targets.append(col + 1)
-                                break
-
-    def search_opt_seven(diagonals_grid, targets, opponentLines, correction):
-        for diag in range(9, 12):
-            diagonal = diagonals_grid[diag]
-            line = "".join(diagonal)
-            for pos in range(0, len(line) - len(opponentLines) + 1):
-                if line[pos: pos + 4] == opponentLines or line == "X XX" or line == "XX X":
-                    col = pos + correction  # empty space in diagonal
-                    if correction == 1:
-                        if column_grid[col + 1][-diag + 5 - correction] != " ":
-                            targets.append(col + 2)
-                            break
-                        else:
-                            if column_grid[col + 1][-diag + 5 - correction] != " ":
-                                targets.append(col + 2)
-                                break
-
-    # Iskanje igralčevih 'XXX' v diagonali top-desno-spodaj-levo
-
-    def search_opt_eight(diagonals_grid, targets, opponentLines):
-
-        # ----------------------------------------------------------------------------------
-        "st. diag.                  0    1    2    3  "
-        '''grid = [[" ", " ", " ", "X", "X", "X", "X"],
-                   [" ", " ", "X", "X", "X", "X", "X"], 4
-                   [" ", "X", "X", "X", "X", "X", "X"], 5
-                   [" ", " ", " ", " ", "X", "X", " "], 
-                   [" ", " ", " ", " ", "X", " ", " "],
-                   [" ", " ", " ", " ", " ", " ", " "]]'''
-
-        for diag in range(0, 6):
-            diagonal = diagonals_grid[diag]
-            line = "".join(diagonal)
-            for pos in range(0, len(line) - len(opponentLines) + 1):
-                if line[pos: pos + 3] == opponentLines:
-                    if pos == 0:
-                        if diagonal[pos + 3] == " ":
-                            if diag <= 0 and diag < 4:
-                                if column_grid[diag][4] != " ":
-                                    targets.append(diag + 1)
-                                    break
-                            if diag == 4:
-                                if column_grid[3][-1] != " ":
-                                    targets.append(4)
-                                    break
-                            if diag == 5:
-                                targets.append(4)
-                                break
-
-                    # --------------------------------------------------
-                    "st. diag.                  0    1    2    3  "
-                    '''grid = [[" ", " ", " ", " ", " ", " ", " "],
-                               [" ", " ", "X", " ", " ", " ", " "], 4
-                               [" ", "X", "X", " ", " ", " ", " "], 5
-                               ["X", "X", "X", "X", "X", "X", " "], 
-                               ["X", "X", "X", "X", "X", " ", " "],
-                               ["X", "X", "X", "X", " ", " ", " "]]'''
-
-                    if pos == len(diagonal) - 3:
-                        if diagonal[pos - 1] == " ":
-                            if diag <= 0 and diag < 3:
-                                if column_grid[3][diag + 1] != " ":
-                                    targets.append(4)
-                                    break
-
-                            if diag <= 3 and diag < 6:
-                                if column_grid[diag + 1][3] != " ":
-                                    targets.append(4)
-                                    break
-
-        # ----------------------------------------------------------------------------------
-            "st. diag.                  0    1    2    3  "
-            '''grid = [[" ", " ", " ", " ", " ", " ", " "],
-                       [" ", " ", " ", "X", "X", "X", " "], 4
-                       [" ", " ", "X", "X", "X", "X", " "], 5
-                       [" ", "X", "X", "X", "X", " ", " "], 
-                       [" ", "X", "X", "X", " ", " ", " "],
-                       [" ", " ", " ", " ", " ", " ", " "]]'''
-
-            for diag in range(1, 3):
-                diagonal = diagonals_grid[diag]
-                line = "".join(diagonal)
-                for pos in range(0, len(line) - len(opponentLines) + 1):
-                    if line[pos: pos + 4] == opponentLines:
-                        col = pos - 1  # empty space in diagonal
-                        if column_grid[-col - 3][col + 1] != " ":
-                            targets.append(-col - 3)
-
-                        col = pos + 3  # empty space in diagonal
-                        if column_grid[-col - 3][col + 1] != " ":
-                            targets.append(-col - 3)
-                            break
-
-            for diag in range(3, 5):
-                diagonal = diagonals_grid[diag]
-                line = "".join(diagonal)
-                for pos in range(0, len(line) - len(opponentLines) + 1):
-                    if line[pos: pos + 4] == opponentLines:
-                        if column_grid[6][-5] != " ":
-                            targets.append(7)
-
-                        if column_grid[3][5] == " ":
-                            targets.append(4)
-                            break
 
 
     # Iskanje igralčevih 'XXX' v diagonali spodaj-desno-top-levo
 
-    def search_opt_nine(diagonals_grid, targets, opponentLines):
-
-        # ----------------------------------------------------------------------------------
-        "st. diag.                  0    1    2    3  "
-        '''grid= 8[["X", "X", "X", "X", " ", " ", " "],
-                 7 ["X", "X", "X", "X", "X", " ", " "], 4
-                 6 ["X", "X", "X", "X", "X", "X", " "], 5
-                   [" ", "X", "X", " ", " ", " ", " "], 
-                   [" ", " ", "X", " ", " ", " ", " "],
-                   [" ", " ", " ", " ", " ", " ", " "]]'''
-
-        for diag in range(6, 12):
-            diagonal = diagonals_grid[diag]
-            line = "".join(diagonal)
+    def search_opt_four(rotated_dTRigth_BLeft, targets, opponentLines):
+        for row in range(len(rotated_dTRigth_BLeft)-1, -1, -1):
+            line = "".join(rotated_dTRigth_BLeft[row])
             for pos in range(0, len(line) - len(opponentLines) + 1):
                 if line[pos: pos + 3] == opponentLines:
                     if pos == 0:
-                        if diagonal[pos + 3] == " ":
-                            if diag in range(7,9):
-                                if column_grid[3][5 - diag + 1] != " ":
-                                    targets.append(4)
+                        try:
+                            if rotated_dTRigth_BLeft[row][pos + 3] == " ":
+                                if rotated_dTRigth_BLeft[row + 1][pos + 2] != " ":
+                                    targets.append(row - 1)
                                     break
-                            if diag == 6:
-                                if column_grid[3][-1] == " ":
-                                    targets.append(4)
+                        except IndexError:
+                            continue
+
+                    elif pos == len(rotated_dTRigth_BLeft[row]) - 3:
+                        try:
+                            if rotated_dTRigth_BLeft[row][pos - 1] == " ":
+                                if rotated_dTRigth_BLeft[row + 1][pos - 2] != " ":
+                                    targets.append(row - 1)
                                     break
-                            if diag in range(9, 12):
-                                if column_grid[diag - 12][-2] != " ":
-                                    targets.append(diag - 4)
+                        except IndexError:
+                            continue
+                    else:
+                        try:
+                            if rotated_dTRigth_BLeft[row][pos - 1] == " ":
+                                if rotated_dTRigth_BLeft[row + 1][pos - 2] != " ":
+                                    targets.append(row - 1)
                                     break
-
-                    # --------------------------------------------------
-                    "st. diag.                  0    1    2    3  "
-                    '''grid = [[" ", " ", " ", " ", " ", " ", " "],
-                               [" ", " ", " ", " ", "X", " ", " "], 4
-                               [" ", " ", " ", " ", "X", "X", " "], 5
-                               [" ", "X", "X", "X", "X", "X", "X"], 
-                               [" ", " ", "X", "X", "X", "X", "X"],
-                               [" ", " ", " ", "X", "X", "X", "X"]]'''
-
-                    if pos == len(diagonal) - 3:
-                        if diagonal[pos - 1] == " ":
-                            if diag in range(9, 12):
-                                if column_grid[4][12 - diag] != " ":
-                                    targets.append(4)
+                        except IndexError:
+                            continue
+                        try:
+                            if rotated_dTRigth_BLeft[row][pos + 3] == " ":
+                                if rotated_dTRigth_BLeft[row + 1][pos + 2] != " ":
+                                    targets.append(row - 1)
                                     break
+                        except IndexError:
+                            continue
 
-                            if diag in range(6, 9):
-                                if column_grid[diag - 4 - 1][3] != " ":
-                                    targets.append(diag - 4)
+    def search_opt_five(rotated_dTLeft_BRight, targets, opponentLines):
+        for row in range(len(rotated_dTLeft_BRight)-1, -1, -1):
+            line = "".join(rotated_dTLeft_BRight[row])
+            for pos in range(0, len(line) - len(opponentLines) + 1):
+                if line[pos: pos + 3] == opponentLines:
+                    if pos == 0:
+                        try:
+                            if rotated_dTLeft_BRight[row][pos + 3] == " ":
+                                if rotated_dTLeft_BRight[row - 1][pos + 2] != " ":
+                                    targets.append(row - 2)
                                     break
+                        except IndexError:
+                            continue
+                    elif pos == len(rotated_dTLeft_BRight[row]) - 3:
+                        try:
+                            if rotated_dTLeft_BRight[row][pos - 1] == " ":
+                                if rotated_dTLeft_BRight[row + 1][pos - 2] != " ":
+                                    targets.append(row + 1)
+                                    break
+                        except IndexError:
+                            continue
+                    else:
+                        try:
+                            if rotated_dTLeft_BRight[row][pos - 1] == " ":
+                                if rotated_dTLeft_BRight[row + 1][pos - 2] != " ":
+                                    targets.append(row + 1)
+                                    break
+                        except IndexError:
+                            continue
+                        try:
+                            if rotated_dTLeft_BRight[row][pos + 3] == " ":
+                                if rotated_dTLeft_BRight[row - 1][pos + 2] != " ":
+                                    targets.append(row - 2)
+                                    break
+                        except IndexError:
+                            continue
 
-            # KONČATI ŠE TO!---------------------------------------------------
-            "st. diag.                  0    1    2    3  "
-            '''grid = [[" ", " ", " ", " ", " ", " ", " "],
-                       [" ", "X", "X", "X", " ", " ", " "], 4
-                       [" ", "X", "X", "X", "X", " ", " "], 5
-                       [" ", " ", "X", "X", "X", "X", " "], 
-                       [" ", " ", " ", "X", "X", "X", " "],
-                       [" ", " ", " ", " ", " ", " ", " "]]'''
+    def search_opt_six(rotated_dTRigth_BLeft, targets, opponentLines):
 
-            for diag in range(7, 9):
-                diagonal = diagonals_grid[diag]
-                line = "".join(diagonal)
-                for pos in range(0, len(line) - len(opponentLines) + 1):
-                    if line[pos: pos + 4] == opponentLines:
-                        col = pos + 3  # empty space in diagonal
-                        if column_grid[col][6-diag-1] != " " or column_grid[col][6-diag] == " ":
-                            targets.append(col + 1)
-                            break
-                        else:
-                            col = pos - 1
-                            if column_grid[col][-diag + 4] != " ":
-                                targets.append(col + 1)
-                                break
+        for row in range(len(rotated_dTRigth_BLeft)-1, -1, -1):
+            line = "".join(rotated_dTRigth_BLeft[row])
+            for pos in range(0, len(line) - len(opponentLines) + 1):
+                if line[pos: pos + 2] == opponentLines:
+                    if pos == 0:
+                        if rotated_dTRigth_BLeft[row][pos + 2] == " ":
+                            try:
+                                if rotated_dTRigth_BLeft[row + 1][pos + 1] != " ":
+                                    targets.append(row - 1)
+                                    break
+                            except IndexError:
+                                continue
+                    elif pos == len(rotated_dTRigth_BLeft[row]) - 2:
+                        try:
+                            if rotated_dTRigth_BLeft[row][pos - 1] == " ":
+                                if rotated_dTRigth_BLeft[row + 1][pos - 1] != " ":
+                                    targets.append(row - 1)
+                                    break
+                        except IndexError:
+                            continue
+                    else:
+                        try:
+                            if rotated_dTRigth_BLeft[row][pos - 1] == " ":
+                                if rotated_dTRigth_BLeft[row + 1][pos - 1] != " ":
+                                    targets.append(row - 1)
+                                    break
+                        except IndexError:
+                            continue
+                        if rotated_dTRigth_BLeft[row][pos + 2] == " ":
+                            try:
+                                if rotated_dTRigth_BLeft[row + 1][pos + 1] != " ":
+                                    targets.append(row - 1)
+                                    break
+                            except IndexError:
+                                continue
 
-            for diag in range(9, 11):
-                diagonal = diagonals_grid[diag]
-                line = "".join(diagonal)
-                for pos in range(0, len(line) - len(opponentLines) + 1):
-                    if line[pos: pos + 4] == opponentLines:
-                        col = pos + 3  # empty space in diagonal
-                        if column_grid[col + 1][-1] != " " or column_grid[col + 2][-1] != " ":
-                            targets.append(col + 2)
-                            break
-                        else:
-                            col = pos - 1
-                            if column_grid[col + 1][-diag + 5 + 1] != " ":
-                                targets.append(col + 2)
-                                break
-
-
+    def search_opt_seven(rotated_dTLeft_BRight, targets, opponentLines):
+        for row in range(len(rotated_dTLeft_BRight)-1, -1, -1):
+            line = "".join(rotated_dTLeft_BRight[row])
+            for pos in range(0, len(line) - len(opponentLines) + 1):
+                if line[pos: pos + 2] == opponentLines:
+                    if pos == 0:
+                        try:
+                            if rotated_dTLeft_BRight[row][pos + 2] == " ":
+                                if rotated_dTLeft_BRight[row - 1][pos + 1] != " ":
+                                    targets.append(row - 1)
+                                    break
+                        except IndexError:
+                            continue
+                    elif pos == len(rotated_dTLeft_BRight[row]) - 2:
+                        try:
+                            if rotated_dTLeft_BRight[row][pos - 1] == " ":
+                                if rotated_dTLeft_BRight[row + 1][pos - 1] != " ":
+                                    targets.append(row + 1)
+                                    break
+                        except IndexError:
+                            continue
+                    else:
+                        try:
+                            if rotated_dTLeft_BRight[row][pos - 1] == " ":
+                                if rotated_dTLeft_BRight[row + 1][pos - 1] != " ":
+                                    targets.append(row + 1)
+                                    break
+                        except IndexError:
+                            continue
+                        try:
+                            if rotated_dTLeft_BRight[row][pos + 2] == " ":
+                                if rotated_dTLeft_BRight[row - 1][pos + 2] != " ":
+                                    targets.append(row - 1)
+                                    break
+                        except IndexError:
+                            continue
 
     """Od tu naprej koda poskrbi da..."""
 
@@ -319,18 +231,13 @@ def search_three_in_lines(grid):
     ustrezen stolpec (variable 'target'). Drugače izbere naključen stolpec."""
 
     search_opt_one(grid, targets, player_opt1)
-    search_opt_two(grid, targets, player_opt2, fix_pos1)
-    search_opt_two(grid, targets, player_opt3, fix_pos2)
+    search_opt_two(grid, targets, player_opt3, fix_pos1)
+    search_opt_two(grid, targets, player_opt4, fix_pos2)
     search_opt_three(column_grid, targets, player_opt1)
-    search_opt_four(diagonals_grid, targets, player_opt2, fix_pos1)
-    search_opt_four(diagonals_grid, targets, player_opt3, fix_pos2)
-    search_opt_five(diagonals_grid, targets, player_opt2, fix_pos1)
-    search_opt_five(diagonals_grid, targets, player_opt3, fix_pos2)
-    search_opt_six(diagonals_grid, targets, player_opt2, fix_pos1)
-    search_opt_six(diagonals_grid, targets, player_opt3, fix_pos2)
-    search_opt_seven(diagonals_grid, targets, player_opt2, fix_pos1)
-    #search_opt_eight(diagonals_grid, targets, player_opt1)
-    #search_opt_nine(diagonals_grid, targets, player_opt1)
+    search_opt_four(rotated_dTRigth_BLeft, targets, player_opt1)
+    search_opt_five(rotated_dTLeft_BRight, targets, player_opt1)
+    search_opt_six(rotated_dTRigth_BLeft, targets, player_opt2)
+    search_opt_seven(rotated_dTLeft_BRight, targets, player_opt2)
 
 
     if targets != []:
@@ -339,19 +246,13 @@ def search_three_in_lines(grid):
         return target
     else:
         search_opt_one(grid, targets, Ai_opt1)
-        search_opt_two(grid, targets, Ai_opt2, fix_pos1)
-        search_opt_two(grid, targets, Ai_opt3, fix_pos2)
+        search_opt_two(grid, targets, Ai_opt3, fix_pos1)
+        search_opt_two(grid, targets, Ai_opt4, fix_pos2)
         search_opt_three(column_grid, targets, Ai_opt1)
-        search_opt_four(diagonals_grid, targets, Ai_opt2, fix_pos1)
-        search_opt_four(diagonals_grid, targets, Ai_opt3, fix_pos2)
-        search_opt_five(diagonals_grid, targets, Ai_opt2, fix_pos1)
-        search_opt_five(diagonals_grid, targets, Ai_opt3, fix_pos2)
-        search_opt_six(diagonals_grid, targets, Ai_opt2, fix_pos1)
-        search_opt_six(diagonals_grid, targets, Ai_opt3, fix_pos2)
-        search_opt_seven(diagonals_grid, targets, Ai_opt2, fix_pos1)
-        search_opt_seven(diagonals_grid, targets, Ai_opt3, fix_pos2)
-        #search_opt_eight(diagonals_grid, targets, Ai_opt1)
-        #search_opt_nine(diagonals_grid, targets, Ai_opt1)
+        search_opt_four(rotated_dTRigth_BLeft, targets, Ai_opt1)
+        search_opt_five(rotated_dTLeft_BRight, targets, Ai_opt1)
+        search_opt_six(rotated_dTRigth_BLeft, targets, Ai_opt2)
+        search_opt_seven(rotated_dTLeft_BRight, targets, Ai_opt2)
 
         if targets == []:
             target = randint(1, 7)

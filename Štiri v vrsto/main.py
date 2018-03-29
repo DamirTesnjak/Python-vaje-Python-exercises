@@ -3,7 +3,6 @@
 ''' Štiri v vrsto
     Avtor: Damir Tešnjak'''
 
-from welcome_screen import welcome
 from displayGrid import game_grid
 from ifGridFull import ifGridFull
 from insertToken import insert_token
@@ -20,7 +19,7 @@ grid = [[" ", " ", " ", " ", " ", " ", " "],
         [" ", " ", " ", " ", " ", " ", " "]]
 
 def player(grid):
-    playerChoice = int(raw_input("\n\n          Vstavite zeton (1-7): \n\n"))
+    playerChoice = int(raw_input("\n\n          Vstavite zeton (1-7):"))
 
     token = "X"
     target = playerChoice
@@ -53,29 +52,29 @@ def start():
         if choose == 0:
             if player(grid) == True:
                 print "          Zmagali ste!"
-                pressToContinue = raw_input("\n\n\n          'ENTER' za izhod: ").lower()
+                pressToContinue = raw_input("\n\n'ENTER' za izhod:").lower()
                 if pressToContinue == "":
                     break
             if ifGridFull(grid) == True:
                 print "          Neodloceno!"
-                pressToContinue = raw_input("\n\n\n          'ENTER' za izhod: ").lower()
+                pressToContinue = raw_input("\n\n'ENTER' za izhod:").lower()
                 if pressToContinue == "":
 				    break
             choose = 1
         else:
             if Ai(grid) == False:
                 print "          Racunalnik je zmagal!"
-                pressToContinue = raw_input("\n\n\n          'ENTER' za izhod: ").lower()
+                pressToContinue = raw_input("\n\n'ENTER' za izhod:").lower()
                 if pressToContinue == "":
                     break
             if ifGridFull(grid) == True:
                 print "          Neodloceno!"
-                pressToContinue = raw_input("\n\n\n          'ENTER' za izhod: ").lower()
+                pressToContinue = raw_input("\n\n'ENTER' za izhod:").lower()
                 if pressToContinue == "":
                     break
             choose = 0
 
-print "\n          ----STIRI V VRSTO----\n          by Damir Tesnjak"			
+print "\n          ----STIRI V VRSTO----\n          by Damir Tesnjak"
 pressToContinue = raw_input("\n\n\n          'ENTER' za nadaljevanje: ").lower()
 
 if pressToContinue == "":

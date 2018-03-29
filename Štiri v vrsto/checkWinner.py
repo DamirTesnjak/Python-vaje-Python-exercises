@@ -1,4 +1,4 @@
-from getDiagonals import diagonals
+from getDiagonals import *
 from getColumns import columns
 
 def check_winner(grid):
