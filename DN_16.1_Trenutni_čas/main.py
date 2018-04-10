@@ -3,12 +3,11 @@ import os
 import jinja2
 import webapp2
 import datetime
-
-today = datetime.datetime.now()
+import time
+ 
 
 template_dir = os.path.join(os.path.dirname(__file__), "templates")
 jinja_env = jinja2.Environment(loader=jinja2.FileSystemLoader(template_dir), autoescape=False)
-
 
 class BaseHandler(webapp2.RequestHandler):
 
@@ -31,9 +30,9 @@ class BaseHandler(webapp2.RequestHandler):
 
 class MainHandler(BaseHandler):
     def get(self):
-        params = {"time": today.strftime('Time: %H : %M <br /> Date: %d. %m. %Y')}
-        return self.render_template("time.html", params=params)
+		params = {"time": datetime.datetime.now().strftime('UTC: %H : %M : %S<br /> Date: %d. %m. %Y')}
+		return self.render_template("time.html", params=params)
 
-app = webapp2.WSGIApplication([
-    webapp2.Route('/', MainHandler),
-], debug=True)
+while True:
+	app = webapp2.WSGIApplication([webapp2.Route('/', MainHandler),], debug=True)
+	time.sleep(10)
