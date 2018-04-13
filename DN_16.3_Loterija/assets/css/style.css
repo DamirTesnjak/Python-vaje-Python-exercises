@@ -1,0 +1,72 @@
+body {
+  background: #1a1a1a;
+}
+
+body::after {
+  content: "";
+  background: url("pic1.jpg");
+  background-repeat: repeat;
+  opacity: 0.3;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+/*div {
+  border: 1px solid white;
+}*/
+
+.height {
+  position: relative;
+  height: 300px;
+}
+
+.title {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  font-family: 'Gruppo', cursive;
+  font-size: 100px;
+  color: #e6ffff;
+  text-shadow: 0 0 50px #80ffff, 0 0 50px #80ffff, 0 0 50px #80ffff, 0 0 50px #80ffff, 0 0 5px #80ffff;
+  text-align: center;
+}
+
+.row-btn {
+  height: auto;
+  text-align: center;
+}
+
+.btn{
+  margin-top: 50px;
+  min-width: 54px;
+  width: 200px;
+  height: 35px;
+  background-color: black;
+  border: 1px solid black;
+  color: white;
+  font-family: 'Gruppo', cursive;
+  font-size: 25px;
+  color: #e6ffff;
+  font-weight: bold;
+  line-height: 27px;
+  padding: 0px 16px;
+  text-align: center;
+  box-shadow: 0 4px 8px 0 #80ffff, 0 0px 20px 0 #80ffff;
+}
+
+.btn:hover {
+  color: #e6f7ff;
+  border: 1px solid black;
+  box-shadow: 0 4px 8px 0 #e6f7ff, 0 0px 20px 0 #e6f7ff;
+}
+
+.btn:active {
+  color: #80ff80;
+  border: 1px solid black;
+  box-shadow: 0 4px 3px 0 #80ff80, 0 0px 10px 0 #80ff80;
+
+}
