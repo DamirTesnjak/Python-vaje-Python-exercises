@@ -1,0 +1,107 @@
+body {
+  height: 100%;
+  width: 100%;
+}
+
+.container {
+  position: fixed !important;
+  position: absolute;
+  top:0;
+  right:0;
+  bottom:0;
+  left:0;
+  background: linear-gradient(to right, #6699ff 51%, #0033cc 88%);
+}
+
+.title-header {
+  background: linear-gradient(to right, #0033cc 51%, #6699ff 88%);
+}
+
+.logo {
+  display: inline-block;
+  margin-left: 0;
+}
+
+.title {
+  display: inline-block;
+  position: absolute;
+  width: 100%;
+  height: auto;
+  margin-top: 50px;
+  padding-top: 50px;
+  font-family: 'Russo One', sans-serif;
+  font-size: 25px;
+  color: white;
+}
+
+.form {
+  height: 200px;
+  padding: 10px;
+  font-family: 'Russo One', sans-serif;
+  color: #0033cc;
+}
+
+.text {
+  margin-top: 5px;
+  margin-left: 10px;
+  margin-bottom: 25px;
+}
+
+textarea, table {
+  padding: 5px;
+  color: blue;
+  border: 2px solid #3366ff;
+  border-radius: 2px;
+  background: #cce0ff;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+td, th {
+    border: 1px solid #3366ff;
+    border-collapse: collapse;
+    text-align: left;
+    padding: 8px;
+}
+
+.btn-container {
+  width: 670px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.btn {
+  width: 100px;
+  min-width: 54px;
+  background: #003399;
+  border: 1px solid #003399;
+  color: white;
+  font-size: 13px;
+  font-weight: bold;
+  line-height: 27px;
+  padding: 0px 16px;
+  text-align: center;
+}
+
+.btn:hover {
+  color: white;
+  background: #004de6;
+  border: 1px solid #004de6;
+}
+
+.btn:active {
+  background: #003399;
+  border: 1px solid #003399;
+}
+
+.foot {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  padding: 10px;
+  background: #3366ff;
+  font-family: 'Russo One', sans-serif;
+  color: #0033cc;
+}

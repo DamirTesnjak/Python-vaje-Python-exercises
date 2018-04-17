@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+      <div class="form">
+        <div class="text">
+          Rezultati DNK analize
+        </div>
+        <div class="result">
+          <table>
+            <tr>
+              <td>Spol:</td>
+              <td>{{ spol }}</td>
+            </tr>
+            <tr>
+              <td>Rasa:</td>
+              <td>{{ rasa }}</td>
+            </tr>
+            <tr>
+              <td>Oblika obraza:</td>
+              <td>{{ obraz }}</td>
+            </tr>
+            <tr>
+              <td>Barva oči:</td>
+              <td>{{ barva_oci }}</td>
+            </tr>
+            <tr>
+              <td>Barva las:</td>
+              <td>{{ barva_las }}</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+{% endblock content %}
