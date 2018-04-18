@@ -1,0 +1,45 @@
+body {
+     background-color: #404040;
+}
+
+.clock {
+  position: absolute;
+  margin: auto;
+  padding: 10px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 350px;
+  height: 180px;
+  background: #262626;
+  border: solid;
+  border-top-color:  #262626;
+  border-left-color:  #262626;
+  border-right-color: #0d0d0d;
+  border-bottom-color: #333333;
+  border-radius: 10px;
+  border-width: 5px;
+  box-shadow: 0 4px 8px 0 #80ffff, 0 6px 20px 0 #80ffff;
+  font-family: 'Rajdhani', sans-serif;
+  color: #80ffff;
+}
+
+.clock-display {
+  height: 80%;
+  width: 300px;
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  padding-left: 10px;
+  background-color: #000000;
+  border: solid;
+  border-top-color: #4d4d4d;
+  border-left-color: #4d4d4d;
+  border-right-color: #0d0d0d;
+  border-bottom-color: #333333;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 30px;
+  color: #e6ffff;
+  text-shadow: 0 0 5px #80ffff, 0 0 5px #80ffff;
+}
