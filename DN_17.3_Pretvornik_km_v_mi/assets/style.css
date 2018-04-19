@@ -2,7 +2,7 @@ body {
      background-color: #404040;
 }
 
-.box {
+.pretvornik {
   position: absolute;
   margin: auto;
   padding: 10px;
@@ -11,7 +11,7 @@ body {
   bottom: 0;
   left: 0;
   width: 350px;
-  height: 180px;
+  height: 220px;
   background: #262626;
   border: solid;
   border-top-color:  #262626;
@@ -20,14 +20,14 @@ body {
   border-bottom-color: #333333;
   border-radius: 10px;
   border-width: 5px;
-  box-shadow: 0 4px 8px 0 #80ffff, 0 6px 20px 0 #80ffff;
+  box-shadow: 0 4px 8px 0 #ff0000, 0 6px 20px 0  #ff0000;
   font-family: 'Rajdhani', sans-serif;
-  color: #80ffff;
+  color:  #ff0000;
 }
 
-.box-display {
+.pretvornik-display {
   height: 80%;
-  width: 300px;
+  width: 290px;
   margin-top: 10px;
   margin-left: 10px;
   margin-bottom: 10px;
