@@ -1,0 +1,79 @@
+img {
+  border: 1px solid black;
+}
+
+.container-fluid {
+  position: absolute;
+  top:0;
+  right:0;
+  bottom:0;
+  left:0;
+  background: #99ccff;
+}
+
+.main {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+.title {
+  padding: 10px;
+  background: linear-gradient(to right, #6699ff 51%, #0033cc 88%);
+  color: yellow;
+  font-family: 'Luckiest Guy', cursive;
+  font-size: 50px;
+}
+
+.answer-row {
+  background: #d9d9d9;
+}
+
+.center-column {
+  background: white;
+}
+
+.question-text, .input-answer, .result {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-align: center;
+}
+
+.question-text, .result {
+  font-family: 'Luckiest Guy', cursive;
+  font-size: 50px;
+}
+
+.question-flag{
+  padding: 10px;
+}
+
+.input-box {
+  height: 40px;
+  width: 20%;
+  padding-left: 20px;
+  border: 3px solid #6699ff;
+  border-radius: 20px;
+}
+
+.answers {
+  margin: auto;
+  padding: 20px;
+  width: 30%;
+  text-align: left;
+  font-family: segoe ui;
+  font-size: 25px;
+}
+
+.btn {
+  background: #6699ff;
+  color: yellow;
+  font-family: segoe ui;
+  font-size: 17px;
+}
+
+.foot {
+  position: absolute;
+  bottom: 0;
+  background: linear-gradient(to right, #6699ff 51%, #0033cc 88%);
+}

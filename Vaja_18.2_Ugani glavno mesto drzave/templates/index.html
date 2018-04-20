@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="author" content="Damir Tešnjak">
+    <title>Quizz Guess capital city of a country</title>
+
+        <!-- External Google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Luckiest+Guy" rel="stylesheet">
+
+        <!-- Bootstrap CSS -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+
+        <!-- Custom CSS -->
+    <link href="assets/css/layout.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.js"></script>
+  <body>
+    <div class="container-fluid">
+      <div class="row main">
+        <div class="col-md-2 left-column">
+        </div>
+        <div class="col-md-8 center-column">
+          <div class="row">
+            <div class="col-md-12 title">
+              Guess capital city of a country:
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 question">
+              <div class="row">
+                <div class="col-md-6 question-text">
+                  {{ country }}
+                </div>
+                <div class="col-md-6 question-flag">
+                  <img src="/assets/img/{{ flag }}" alt="{{ flag }}" style="height:150px">
+                </div>
+              </div>
+              <div class="row answer-row">
+                <div class="col-md-12 input-answer">
+                  <form class="" action="/" method="post">
+                    <div class="answers">
+                      A: {{ answerA }}<br>
+                      B: {{ answerB }}<br>
+                      C: {{ answerC }}
+                    </div><br>
+                    <input class="input-box" type="text" name="vnos" placeholder="Your answer">
+                    <input class="btn" type="submit" name="" value="Guess!">
+                  </form>
+                  <form class="button-next" action="/" method="get">
+                    <input class="btn" type="submit" name="" value="Next!">
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 result">
+              {{ result }}
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 foot">
+              Flags of countries: source Wikipedia | Author: Damir Tešnjak
+            </div>
+          </div>
+        </div>
+      <div class="col-md-2 right-column">
+      </div>
+    </div>
+  </body>
+</html>
