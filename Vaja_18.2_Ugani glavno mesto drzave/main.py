@@ -67,11 +67,11 @@ class MainHandler(BaseHandler):
         global answerC
         answerC = dictLines[ordDictKeys[2]]
 
-        params = {"answerA": u''+ answerA,
-                  "answerB": u''+ answerB,
-                  "answerC": u''+ answerC,
-                  "country": u''+ country,
-                  "flag" : u'' + country + ".jpg"}
+        params = {"answerA": answerA,
+                  "answerB": answerB,
+                  "answerC": answerC,
+                  "country": country,
+                  "flag" : country + ".jpg"}
 
         return self.render_template("index.html", params=params)
 
@@ -85,12 +85,12 @@ class MainHandler(BaseHandler):
         else:
             result = "Incorrect! It is " + dictLines[ordDictKeys[randomIndex]] + "!"
 
-        params = {"answerA": u''+ answerA,
-                  "answerB": u''+ answerB,
-                  "answerC": u''+ answerC,
-                  "country": u''+ country,
-                  "flag" : u'' + country + ".jpg",
-                  "result": u''+ result}
+        params = {"answerA": answerA,
+                  "answerB": answerB,
+                  "answerC": answerC,
+                  "country": country,
+                  "flag" : country + ".jpg",
+                  "result": result}
 
         return self.render_template("index.html", params=params)
 

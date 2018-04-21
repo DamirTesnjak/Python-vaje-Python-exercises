@@ -44,12 +44,11 @@
                 <div class="col-md-12 input-answer">
                   <form class="" action="/" method="post">
                     <div class="answers">
-                      A: {{ answerA }}<br>
-                      B: {{ answerB }}<br>
-                      C: {{ answerC }}
+                      <input class="radio" type="radio" name="vnos" value="A"> {{ answerA }}<br>
+                      <input class="radio" type="radio" name="vnos" value="B"> {{ answerB }}<br>
+                      <input class="radio" type="radio" name="vnos" value="C"> {{ answerC }}
                     </div><br>
-                    <input class="input-box" type="text" name="vnos" placeholder="Your answer">
-                    <input class="btn" type="submit" name="" value="Guess!">
+                    <input class="btn" type="submit" name="" value="Guess!"><br><br>
                   </form>
                   <form class="button-next" action="/" method="get">
                     <input class="btn" type="submit" name="" value="Next!">
