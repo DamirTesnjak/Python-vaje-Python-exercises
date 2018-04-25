@@ -1,0 +1,113 @@
+body {
+  background-image: url("Background.jpg"); fixed;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.main {
+  height: 100%;
+}
+
+.main-title {
+  margin-top: 20px;
+  border: 2px solid #DAA520;
+  border-radius: 10px;
+  color: #DAA520;
+  font-family: 'Cinzel', serif;
+  font-size: 40px;
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.sub-title {
+  margin-top: 20px;
+  font-family: 'Poiret One', cursive;
+  font-size: 30px;
+}
+
+.text {
+  margin-top: 20px;
+  color: #8B4513;
+  font-family: 'Poiret One', cursive;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.text2 {
+  padding: 10px;
+  border: 2px solid #ffcc66;
+  border-radius: 5px;
+  margin-top: 20px;
+  font-family: 'Poiret One', cursive;
+  font-size: 15px;
+  background: white;
+  box-shadow: 2px 2px 10px grey;
+}
+
+.commands {
+  text-align: right;
+}
+
+.buttons {
+  display: inline-block;
+  position: relative;
+  text-align: right;
+}
+
+.form {
+  position: relative;
+  top: 60px;
+  margin: auto;
+  width: 50%;
+  text-align: center;
+}
+
+.form-button {
+  display: inline-block;
+  position: relative;
+  text-align: right;
+}
+
+.box-name, .email-box, .message {
+  background: white;
+  border: 2px solid #ffcc66;
+  border-radius: 5px;
+  width: 100%;
+  padding: 10px;
+  box-shadow: 5px 5px 5px grey;
+  text-align: left;
+}
+
+.btn {
+  padding-left: 10px;
+  padding-right: 10px;
+  width: auto;
+  border: 2px solid #DAA520;
+  color: white;
+  background: #DAA520;
+  font-family: 'Cinzel', serif;
+}
+
+.btn:hover {
+  border: 2px solid #D2691E;
+  color: white;
+  background: #D2691E;
+  font-family: 'Cinzel', serif;
+}
+
+.btn2 {
+  padding-left: 10px;
+  padding-right: 10px;
+  width: auto;
+  border: 2px solid #DAA520;
+  color: white;
+  background: #DAA520;
+  font-family: 'Cinzel', serif;
+  font-size: 12px;
+}
+
+.btn2:hover {
+  border: 2px solid #D2691E;
+  color: white;
+  background: #D2691E;
+  font-family: 'Cinzel', serif;
+}

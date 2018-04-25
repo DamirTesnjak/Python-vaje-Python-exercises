@@ -1,0 +1,36 @@
+{% extends "base2.html" %}
+
+{% block subtitle %}
+            Guest opinions <br/><br/>
+            <a class="btn2" href="/messages_del">Show deleted messages</a>
+{% endblock subtitle %}
+
+{% block content %}
+          {% for message in listMessages %}
+            {% if message.name == "" %}
+            <div class="text2">
+              <b>Unknown</b> | {{ message.date }}<br/><br/>
+              {{ message.message }}
+              <div class="commands">
+                <div class="buttons">
+                  <a class="btn2" href="/message/{{ message.key.id() }}">View</a>
+                  <a class="btn2" href="/message/{{ message.key.id() }}/delete">Delete</a>
+                  <a class="btn2" href="/message/{{ message.key.id() }}/edit">Edit</a>
+                </div>
+              </div>
+            </div>
+            {% else %}
+            <div class="text2">
+              <b>{{ message.name }}</b> | {{ message.date }}<br/><br/>
+              {{ message.message }}
+              <div class="commands">
+                <div class="buttons">
+                  <a class="btn2" href="/message/{{ message.key.id() }}">View</a>
+                  <a class="btn2" href="/message/{{ message.key.id() }}/delete">Delete</a>
+                  <a class="btn2" href="/message/{{ message.key.id() }}/edit">Edit</a>
+                </div>
+              </div>
+            </div>
+            {% endif %}
+          {% endfor %}
+{% endblock content %}

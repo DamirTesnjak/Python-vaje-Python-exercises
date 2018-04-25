@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block content %}
+              <div class="form">
+                <form class="" action="/message/{{ message.key.id() }}/delete" method="post">
+                  Are you sure you want to delete this message?<br/><br/>
+                  <input class="btn" type="submit" value="YES, delete">
+                </form>
+{% endblock content %}

@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+              <div class="sub-title">
+                Message from: {{ message.name }}
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form">
+                <form class="" action="/message/{{ message.key.id() }}/edit" method="post">
+                  Name<div class="box-name">{{ message.name }}</div><br/><br/>
+                  Message<div class="message">{{ message.message }}</div><br/><br/>
+                  <a class="btn" href="/message/{{ message.key.id() }}/delete">Delete</a> <a class="btn" href="/messages">Show all messages</a>
+                </form>
+{% endblock content %}

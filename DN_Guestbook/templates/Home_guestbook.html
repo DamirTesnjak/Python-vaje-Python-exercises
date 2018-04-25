@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+              <div class="text">
+                We are pleased that you choose our hotel for your stay. We will
+                be even more pleased if you leave us message about quality of our
+                services. Your feedback is very imporant to us, as we strive to
+                constantly improve our services to our guests.<br/><br/>
+                Filton Hotel Interantional
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form">
+                <form class="" action="/temp" method="post">
+                  <input class="box-name" type="text" name="name" value="" placeholder="Your name"><br/><br/>
+                  <input class="email-box" type="text" name="email" value="" placeholder="E-mail"><br/><br/>
+                  <textarea class="message" name="message" rows="8" cols="80" placeholder="Your message about..."></textarea><br/><br/>
+                  <input class="btn" type="submit" value="Post"> <a class="btn" href="/messages">Show all messages</a>
+                </form>
+{% endblock content %}

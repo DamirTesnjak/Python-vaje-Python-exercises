@@ -1,0 +1,40 @@
+{% extends "base2.html" %}
+
+{% block subtitle %}
+            Deleted messages<br /><br />
+            <a class="btn2" href="/messages">Show messages</a>
+{% endblock subtitle %}
+
+{% block content %}
+          {% for message in listMessages %}
+            {% if message.name == "" %}
+            <div class="text2">
+              <b>Unknown</b> | {{ message.date }}<br/><br/>
+              {{ message.message }}
+              <div class="commands">
+                <div class="buttons">
+                  <a class="btn2" href="/message/{{ message.key.id() }}">View</a>
+                  <a class="btn2" href="/message/{{ message.key.id() }}/irr_deleted">Delete</a>
+                </div>
+                <form class="form-button" action="/message/{{ message.key.id() }}/restore" method="post">
+                  <input class="btn2" type="submit" value="Restore">
+                </form>
+              </div>
+            </div>
+            {% else %}
+            <div class="text2">
+              <b>{{ message.name }}</b> | {{ message.date }}<br/><br/>
+              {{ message.message }}
+              <div class="commands">
+                <div class="buttons">
+                  <a class="btn2" href="/message/{{ message.key.id() }}">View</a>
+                  <a class="btn2" href="/message/{{ message.key.id() }}/irr_deleted">Delete</a>
+                </div>
+                <form class="form-button" action="/message/{{ message.key.id() }}/restore" method="post">
+                  <input class="btn2" type="submit" value="Restore">
+                </form>
+              </div>
+            </div>
+          {% endif %}
+        {% endfor %}
+{% endblock content %}

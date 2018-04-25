@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+              <div class="text">
+                You are about to edit a message.
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form">
+                <form class="" action="/message/{{ message.key.id() }}/edit" method="post">
+                  <input class="box-name" type="text" name="name" placeholder="{{ message.name }}"><br/><br/>
+                  <input class="email-box" type="text" name="email" placeholder="{{ message.email }}"><br/><br/>
+                  <textarea class="message" name="message" rows="8" cols="80" placeholder="{{ message.message }}"></textarea><br/><br/>
+                  <a class="btn" href="/message/{{ message.key.id() }}/delete">Delete</a>
+                  <input class="btn" type="submit" value="Edit"> <a class="btn" href="/messages">Show all messages</a>
+                </form>
+{% endblock content %}
