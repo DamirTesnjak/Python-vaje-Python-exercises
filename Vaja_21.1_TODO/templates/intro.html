@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="author" content="Damir Tešnjak">
+
+    <!-- Bootstrap CSS -->
+    <link href="/assets/css/bootstrap.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="/assets/js/bootstrap.js"></script>
+    <title>Task manager | task list</title>
+  </head>
+  <body>
+    <audio id="play" controls autoplay style="visibility: hidden;">
+      <source src="/assets/sounds/o98.wav" type="audio/wav">
+          Your browser does not support the audio element.
+    </audio>
+    <div class="container">
+      <div class="row ">
+        <div class="col-md-12">
+          <div class="main">
+            <div class="title">
+              <div class="text-title">
+                <img src="/assets/icons/task.ico" alt="" style="margin-left: 2px; margin-right: 2px; width: 13px; height: 13px;">Task Manger | Tasks (by Damir Tešnjak)
+              </div>
+              <div class="button-qmark">
+                <a href="#info"><button class="button" style="font-size: 11px;"><b>?</b></button></a>
+              </div>
+            </div>
+            <div id="info" class="overlay">
+              <div class="popup" style="width: 500px;">
+                <div class="title">
+                  <div class="text-title">
+                    Info
+                  </div>
+                </div>
+                <div class="content">
+                  <br>
+                    <p>Title: <br> <input class="input-box" type="text" name="title" placeholder="Information"="Information"></p>
+                    <p>Deadline: <br> <input class="input-box" type="text" name="deadline" placeholder="about Task Manager"></p>
+                    <p>Description: <br> <textarea class="input-box" name="description" rows="8" cols="30">This application was created with the purpose of gaining skills in web development. Icons and sounds are not my work. The design is inspired by the Windows 98 style.
+                    </textarea></p>
+                    <p><a href="#"><button>Close</button></a></p>
+               </div>
+             </div>
+            </div>
+            <div class="tools">
+              <p>Welcome! <a href="/task_list"><button onclick="document.getElementById('play').play()"><img src="/assets/icons/71.ico" style="width: 32px;" alt=""> <b>Start app</b> </button></a>
+            </div>
+            <div class="table-box">
+              <div class="table-content">
+                  <table>
+                    <tr>
+                      <th>Title
+                        <a href="/sortTitleUP">&#8679;</a>
+                        <a href="/sortTitleDOWN">&#8681;</a>
+                      </th>
+                      <th>Deadline
+                        <a href="/sortDeadlineUP">&#8679;</a>
+                        <a href="/sortDeadlineDOWN">&#8681;</a>
+                      </th>
+                      <th>Date
+                        <a href="/sortDateUP">&#8679;</a>
+                        <a href="/sortDateDOWN">&#8681;</a>
+                      </th>
+                      <th>Status
+                        <a href="/sortStatusUP">&#8679;</a>
+                        <a href="/sortStatusDOWN">&#8681;</a>
+                      </th>
+                      <th>Options</th>
+                      </tr>
+                  </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
