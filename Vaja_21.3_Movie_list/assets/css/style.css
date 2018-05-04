@@ -1,0 +1,232 @@
+body {
+  background: rgb(64, 128, 128);
+  background-image: url("filmreel.gif");
+}
+
+p.buttons {
+  text-align: center;
+}
+
+.input-box {
+  width: 475px;
+  border: 1px solid grey;
+  outline-style: inset;
+  outline-color: rgb(65, 65, 65);
+  outline-width: 2px;
+  outline-offset: -2px;
+}
+
+.container {
+  position: fixed !important;
+  position: absolute;
+  top:0;
+  right:0;
+  bottom:0;
+  left:0;
+}
+
+.main {
+  margin-bottom: 10px;
+  margin-top: 10px;
+  max-height: 500px;
+  background: rgb(206, 206, 198);
+  outline-style: outset;
+  outline-color: white;
+  outline-width: 1px;
+}
+
+.title {
+  display: inline-block;
+  width: 100%;
+  padding: 2px;
+  border: 2px solid rgb(206, 206, 198);
+  color: white;
+  background: linear-gradient(to right, rgb(10, 36, 106) 51%, rgb(165, 202, 235) 88%);
+  font-weight: bold;
+  font-size: 13px;
+}
+
+.text-title{
+  width: 400px;
+  font-size: 13px;
+}
+
+.button {
+  position: absolute;
+  width: auto;
+  height: auto;
+  top: 2px;
+  right: 2px;
+  text-align: center;
+}
+
+.button-qmark {
+  position: absolute;
+  width: auto;
+  height: auto;
+  top: 12px;
+  right: 18px;
+  text-align: center;
+}
+
+.tools {
+  width: 100%;
+  border-right: 2px solid rgb(206, 206, 198);
+  border-left: 2px solid rgb(206, 206, 198);
+  border-bottom: 2px solid rgb(206, 206, 198);
+  padding: 2px;
+  font-size: 13px;
+}
+
+button {
+  margin-left: 2px;
+  width: auto;
+  height: auto;
+  background: rgb(206, 206, 206);
+  color: black;
+  border-top: 1px solid white;
+  border-left: 1px solid white;
+  border-right: 1px solid rgb(123, 123, 123);
+  border-bottom: 1px solid rgb(123, 123, 123);
+  font-size: 13px;
+  outline:1px solid rgb(123, 123, 123);
+  outline-style: outset;
+  outline-color: rgb(65, 65, 65);
+  outline-width: 1px;
+}
+
+button:hover {
+  color: black;
+  border-top: 1px solid white;
+  border-left: 1px solid white;
+  border-right: 1px solid rgb(123, 123, 123);
+  border-bottom: 1px solid rgb(123, 123, 123);
+}
+
+button:active {
+  background:rgb(230, 230, 230);
+  color: black;
+  border-top: 1px solid rgb(123, 123, 123);
+  border-left: 1px solid rgb(123, 123, 123);
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+
+}
+
+.table-box {
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-top: 1px solid black;
+  border-right: 2px solid rgb(206, 206, 198);
+  border-bottom: 2px solid rgb(206, 206, 198);
+  border-left: 2px solid rgb(206, 206, 198);
+  background: rgb(123, 123, 123);
+  margin-bottom: 5px;
+}
+.table-content {
+  max-height: 600px;
+  resize: vertical;
+  overflow: auto;
+  width:100%;
+
+  padding: 1px;
+  outline:1px solid rgb(123, 123, 123);
+}
+
+table {
+  width: 90%;
+  border-top: 1px solid white;
+  border-left: 1px solid white;
+  border-right: 1px solid rgb(123, 123, 123);
+  border-bottom: 1px solid rgb(123, 123, 123);
+  outline:1px solid rgb(123, 123, 123);
+  outline-style: outset;
+  outline-color: rgb(65, 65, 65);
+  outline-width: 1px;
+}
+
+th,.tools {
+  background: rgb(206, 206, 198);
+}
+
+th {
+  font-weight: normal;
+}
+
+th {
+  padding-left: 6px;
+  padding-right: 6px;
+  border-top: 1px solid white;
+  border-left: 1px solid white;
+  border-right: 1px solid rgb(123, 123, 123);
+  border-bottom: 1px solid rgb(123, 123, 123);
+  font-size: 13px;
+}
+
+td {
+  padding-left: 6px;
+  padding-right: 6px;
+  border: 1px solid rgb(123, 123, 123);
+  background: white;
+  font-size: 13px;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  visibility: hidden;
+  opacity: 1;
+}
+.overlay:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+.popup {
+  margin: 70px auto;
+  width: 500px;
+  background: rgb(206, 206, 198);
+  border-top: 1px solid white;
+  border-left: 1px solid white;
+  border-right: 1px solid rgb(123, 123, 123);
+  border-bottom: 1px solid rgb(123, 123, 123);
+  font-size: 13px;
+  position: relative;
+  outline:1px solid rgb(123, 123, 123);
+  outline-style: outset;
+  outline-color: rgb(65, 65, 65);
+  outline-width: 1px;
+}
+
+.popup .close {
+  position: absolute;
+  top: 10px;
+  right: 30px;
+  transition: all 200ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+
+.popup .content {
+  max-height: 30%;
+  overflow: auto;
+}
+
+.content {
+  margin-left: 12px;
+}
+
+@media screen and (max-width: 700px){
+  .box{
+    width: 70%;
+  }
+  .popup{
+    width: 70%;
+  }
+}
