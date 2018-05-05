@@ -1,0 +1,55 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="author" content="Damir Tešnjak">
+
+    <!-- Bootstrap CSS -->
+    <link href="/assets/css/bootstrap.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="/assets/js/bootstrap.js"></script>
+    <title>Chat room</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="main-title">
+            Chat Room
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 col-sm-12">
+          <div class="form">
+            <form class="" action="/add" method="post">
+              <input type="text" name="title" value="" placeholder="Title">
+              <br>
+              <textarea name="message">Your message...</textarea>
+              <br>
+              <input class="button" type="submit" name="" value="Send">
+            </form>
+          </div>
+        </div>
+        <div class="col-md-6 col-sm-12">
+          <div class="message-container">
+            {% for message in messages %}
+            <div class="message-card">
+                <div class="title">
+                  {{ message.title }} | Date: {{ message.date }} at {{ message.time }}
+                </div>
+                <div class="message">
+                  {{ message.message }}
+                </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
