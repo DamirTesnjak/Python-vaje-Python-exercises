@@ -1,0 +1,329 @@
+/*div {
+  border: 1px solid black;
+}*/
+
+.container-pos {
+  position: absolute;
+  position: absolute !important;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  /*background: grey;*/
+}
+
+.padding-row-col {
+  padding: 0px;
+}
+
+.pos-rigth {
+  position: absolute;
+  right: 0px;
+}
+
+.pos-bottom {
+  position:absolute;
+  width: 100%;
+  bottom: 0;
+}
+
+.pos-between {
+  width: auto;
+  height: auto;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.width-auto {
+  width: auto;
+}
+
+.width-100 {
+  width: 100px;
+}
+
+.main-title{
+  padding-left: 10px;
+}
+
+.title-bckg {
+  background: linear-gradient(to right, #ffffff 55%, #e6e6e6 100%);
+}
+
+.user-container {
+  padding-top: 10px;
+}
+
+.user-name-width {
+  width: 10px;
+  max-width: 200px;
+}
+
+.logout {
+  padding-right: 20px;
+}
+
+.menu-bckg {
+  background: linear-gradient(to right, #ffffff 90%, #e6e6e6 100%);
+}
+
+.blue {
+  color: rgb(60, 143, 200);
+}
+
+.orange {
+  color: rgb(253, 216, 0);
+}
+
+.red {
+  color: rgb(238, 97, 80);
+}
+
+.green {
+  color: rgb(88, 190, 91);
+}
+
+.font-logo {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 30px;
+  font-weight: bolder;
+}
+
+.font-size {
+  font-size: 25px;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.icon-width {
+  width: 32px;
+}
+
+.menu {
+  padding-top: 20px;
+  max-height: 240px;
+  border-top: 5px solid rgb(60, 143, 200);
+}
+
+.menu-item {
+  padding-left: 20px;
+  padding-bottom: 5px;
+}
+
+.menu-button {
+  width: auto;
+  background: white;
+  border: 2px solid white;
+  color: rgb(60, 143, 200);
+  text-align: left;
+}
+
+.menu-button:hover {
+  border-bottom: 2px solid rgb(60, 143, 200)
+}
+
+.menu-button:active {
+  color: rgb(238, 97, 80);
+  border-bottom: 2px solid rgb(238, 97, 80);
+}
+
+.tools {
+  padding-left: 20px;
+  border-left: 5px solid rgb(88, 190, 91);
+  background: white;
+}
+
+.table-bckg {
+  background: white;
+}
+
+.background {
+  background: linear-gradient(to top, #ffffff 93%, grey 100%) fixed;
+}
+
+table {
+  table-layout: fixed;
+  border-bottom: 2px solid rgb(253, 216, 0);
+  width: 100%;
+}
+
+th {
+  padding-left: 5px;
+  font-size: 15px;
+  font-weight: bold;
+  background: #e6f2ff;
+  border-left: 2px solid rgb(60, 143, 200);
+}
+
+td {
+  font-size: 13px;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.foot {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 41px;
+  color: rgba(0,0,0,0.54);
+  background: #f2f2f2;
+  font-size: 13px;
+  border-top: 1px solid #e4e4e4;
+  line-height: 40px;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  visibility: hidden;
+  opacity: 1;
+  z-index: 1;
+}
+.overlay:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+.popup {
+  margin: 70px auto;
+  width: 500px;
+  border: 1px solid rgb(60, 143, 200);
+  background: white;
+  font-size: 13px;
+  position: relative;
+  box-shadow: 2px 2px 2px grey;
+}
+
+.popup .close {
+  position: absolute;
+  top: 10px;
+  right: 30px;
+  transition: all 200ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+
+.popup .content {
+  max-height: 30%;
+  overflow: auto;
+}
+
+.content {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+@media screen and (max-width: 700px){
+  .box{
+    width: 70%;
+  }
+  .popup{
+    width: 70%;
+  }
+}
+
+.popup-title {
+  width: 89%;
+  padding: 15px;
+  color: rgb(60, 143, 200);
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.popup-button {
+  width: 10%;
+  padding-right: 5px;
+  color: rgb(60, 143, 200);
+  font-size: 15px;
+  font-weight: bold;
+  text-align: right;
+}
+
+input, textarea {
+  width: 100%;
+  border-top: 1px solid white;
+  border-right: 1px solid white;
+  border-bottom: 1px solid #e6e6e6;
+  border-left: 1px solid white;
+}
+
+.button {
+  width: auto;
+  background: white;
+  border: 2px solid white;
+  color: rgb(60, 143, 200);
+  font-size: 15px;
+  text-align: center;
+}
+
+.button:hover {
+  border-bottom: 2px solid rgb(60, 143, 200);
+}
+
+.button:active {
+  color: rgb(60, 143, 200);
+  border-bottom: 2px solid rgb(238, 97, 80);
+}
+
+.logout-button {
+  margin-top: 10px;
+  width: auto;
+  background: white;
+  border: 2px solid white;
+  color: rgb(60, 143, 200);
+  text-align: center;
+}
+
+.logout-button:hover {
+  border-bottom: 2px solid rgb(238, 97, 80);
+}
+
+.logout-button:active {
+  color: rgb(60, 143, 200);
+  border-bottom: 2px solid rgb(238, 97, 80);
+}
+a, a:hover, a:active {
+  color: rgb(60, 143, 200);
+  text-decoration: none;
+}
+
+a.foot-link {
+  color: rgba(0,0,0,0.54);
+  text-decoration: none;
+}
+
+a.foot-link:hover {
+  text-decoration: underline;
+}
+
+.center {
+  padding-bottom: 20px;
+  text-align: center;
+}
+
+.rigth {
+  text-align: right;
+}
+
+.container-left {
+  left: 0px;
+  bottom: 0px;
+  width: 100%;
+  min-width: 280px;
+  text-align: left;
+}
+
+.url-padding-left {
+  margin-left: 0px;
+  padding-left: 30px;
+}

@@ -1,0 +1,294 @@
+.container-pos {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: auto;
+  min-height: 240px;
+}
+
+/* Skupni class-i "Position"*/
+
+.rel-pos {
+  position: relative;
+}
+
+.top-left {
+  top: 0px;
+  left: 0px;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+/* Skupni class za pisavo*/
+
+.font {
+  font-family: arial,sans-serif;
+}
+
+/* Glavni div celotne strani*/
+
+.main-container {
+  width: 100%;
+  height: 100%;
+  min-height: 600px;
+  min-width: 560px;
+}
+
+/* Glava strani*/
+
+.header {
+  width: 100%;
+  height: 50px;
+}
+
+.url-header-padding {
+  padding-right: 7.5px;
+}
+
+/* Logo */
+
+.logo {
+  margin-top: 0px;
+  margin-left: auto;
+  margin-right: auto;
+  min-width: 320px;
+  max-width: 488px;
+  height: auto;
+  padding: 0px;
+  text-align: center;
+}
+
+.slogan {
+  padding-top: 20px;
+  color: grey;
+  font-family: 'Poiret One', cursive;
+  font-size: 45px;
+  text-align: center;
+}
+
+.letter-width {
+  width: auto;
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 30px;
+  font-weight: bolder;
+}
+
+/* Barva črk */
+
+.blue {
+  color: rgb(60, 143, 200);
+}
+
+.orange {
+  color: rgb(253, 216, 0);
+}
+
+.red {
+  color: rgb(238, 97, 80);
+}
+
+.green {
+  color: rgb(88, 190, 91);
+}
+
+/* Navodilo */
+
+.instruct-text {
+  margin-bottom: 20px;
+  padding-top: 20px;
+  color: grey;
+  font-size: 20px;
+  text-align: center;
+}
+
+/* Glavni nosilec za obrazec */
+
+.form {
+  margin: 0 auto;
+  margin-bottom: 145px;
+  width: auto;
+  min-width: 320px;
+  max-width: 488px;
+  height: auto;
+  background: rgb(247, 247, 247);
+  border: 1px solid rgb(247, 247, 247);
+  border-radius: 5px;
+  text-align: center;
+  align-content: center;
+  box-shadow: 2px 2px 2px rgb(197, 197, 197);
+}
+
+/*Nosilec za sliko*/
+
+.container-img {
+  margin-top: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 150px;
+  min-width: 150px;
+  height: auto;
+  padding: 0px;
+  text-align: center;
+}
+
+/* Vpisno polje */
+
+.container-input-box {
+  margin-top: 20px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.input-box {
+  margin-top: 20px;
+  width: 290px;
+  height: 34px;
+  background: rgb(250, 255, 189);
+  color: rgb(34, 34, 34);
+  font-size: 19px;
+  border-radius: 2px;
+  border: 1px solid #b9b9b9;
+  box-shadow: 0px 2px 2px #e4e4e4;
+  align-items: center;
+  padding-left: 10px;
+  padding-right: 60px;
+  text-align: left;
+}
+
+/* Nosilec gumbov pod iskalno vrstico */
+
+.container-btns {
+  margin: 0 auto;
+  width: 100%;
+  height: auto;
+  text-align: center;
+}
+
+/* Tekst "Pomoč" in "Ustvari račun" */
+
+.container-text{
+  margin-top: 10px;
+  margin-bottom: 20px;
+  color: rgb(60, 143, 200);
+  text-align: right;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.create-account-text, a.create-account-text {
+  margin-top: 40px;
+  color: rgb(60, 143, 200);
+  text-align: center;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.descript-account-text {
+  margin-top: 40px;
+  text-align: center;
+  font-size: 13px;
+  font-weight: bold;
+  color: grey;
+}
+
+/* Linki do applikacij */
+
+.container-apps {
+  margin-top: 20px;
+  width: 100%;
+  font-size: 13px;
+  text-align: center;
+}
+
+.url-padding-center {
+  background: rgb(247, 247, 247);
+  color: white;
+  padding: 10px 30px 10px 30px;
+  box-shadow: 2px 2px 2px rgb(197, 197, 197);
+}
+
+/* Noga strani */
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 41px;
+  color: rgba(0,0,0,0.54);
+  background: #f2f2f2;
+  font-size: 13px;
+  border-top: 1px solid #e4e4e4;
+  line-height: 40px;
+}
+
+.container-left {
+  left: 0px;
+  bottom: 0px;
+  width: 100%;
+  min-width: 280px;
+  text-align: left;
+}
+
+.url-padding-left {
+  margin-left: 0px;
+  padding-left: 30px;
+}
+
+.url-padding-right {
+  margin-right: 0px;
+  padding-right: 30px;
+}
+
+.button {
+  margin-top: 20px;
+  width: 320px;
+  min-width: 320px;
+  height: 36px;
+  background: rgb(70, 132, 238);
+  color: white;
+  border: 1px solid rgb(70, 132, 238);
+  font-size: 13px;
+  font-weight: bold;
+  line-height: 27px;
+  border: 1px solid #f2f2f2;
+  border-radius: 2px;
+  text-align: center;
+}
+
+.button:hover {
+  color: white;
+  border: 1px solid rgb(70, 132, 238);
+  box-shadow: 0px 2px 2px #e4e4e4;
+}
+
+.button:active {
+  background: rgb(33, 108, 235);
+  color: white;
+  border: 1px solid rgb(60, 143, 200);
+  box-shadow: 0px 2px 2px #e4e4e4;
+}
+
+a {
+  color: rgba(0,0,0,0.54);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.center {
+  padding-bottom: 20px;
+  text-align: center;
+}
+
+.pos-bottom {
+  position:absolute;
+  width: 100%;
+  bottom: 0;
+}

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="=device-, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <link href="https://fonts.googleapis.com/css?family=Nunito+Sans" rel="stylesheet">
+  <meta name="author" content="Damir Tešnjak">
+  <link href="https://fonts.googleapis.com/css?family=Nunito+Sans" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Inconsolata|Poiret+One" rel="stylesheet">
+  <!-- Bootstrap CSS -->
+  <link href="/assets/css/bootstrap.css" rel="stylesheet">
+  
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="/assets/js/bootstrap.js"></script>
+  <meta name="description" content="Fake site with Google styles!">
+  <meta name="author" content="Damir Tešnjak">
+  <title>Boogle login</title>
+</head>
+  <body>
+    <div class="container-fluid container-pos">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="logo rel-pos">
+                <div class="blue inline-block letter-width">B</div><div class="red inline-block letter-width">o</div><div class="orange inline-block letter-width">o</div><div class="blue inline-block letter-width">g</div><div class="green inline-block letter-width">l</div><div class="red inline-block letter-width">e</div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="slogan rel-pos">
+                One account. All Boogle.
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="instruct-text rel-pos font">
+                {{ message }}.
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form">
+                <div class="container-img rel-pos">
+                  <img src="http://masteringlobalaffairs.org/wp-content/uploads/2018/02/default1.jpg " style="width: 150px; height: 150px; border-radius: 100%;">
+                </div>
+                <div class="rel-pos top-left">
+                  <div class="container-input-box rel-pos">
+                    <form class="" action="/{{ logORsign }}" method="post">
+                      <input class="input-box font inline-block" type="text" name="user" placeholder="Your email">
+                      <input  class="input-box font inline-block" type="password" name="password" placeholder="Your password">
+                      <br><br>
+                      <input class="button" type="submit" name="" value="{{ button }}">
+                    </form>
+                  </div>
+                </div>
+                <div class="container-text font" style="text-align: center; width: 100%; color: red;">
+                  {{ notice }}
+                </div>
+                <div class="container-text font rel-pos top-left center">
+                  <a class="create-account-text" href="">Need help?</a>
+                </div>
+                <div class="container-text font rel-pos top-left center">
+                  <a class="create-account-text" href="/signin">New account</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="footer font">
+            <div class="container-left inline-block">
+              <div class="url-padding-left inline-block">
+                <a href="">About Boogle</a>
+              </div>
+              <div class="url-padding-left inline-block">
+                  <a href="">Privacy</a>
+              </div>
+              <div class="url-padding-left inline-block">
+                <a href="">Terms</a>
+              </div>
+              <div class="url-padding-left inline-block">
+                <a href="">Help</a>
+              </div>
+              <div class="url-padding-left inline-block">
+                <a href="">Language</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
