@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+
+{% block title %}Post: {{topic.title}}{% endblock title %}
+
+{% block topicDetails %}
+
+<div class="row">
+  <div class="col-md-2">
+  </div>
+  <div class="col-md-8">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        {{topic.title}} | {{topic.author_email}}
+      </div>
+      <div class="panel-body">
+        Created: {{ topic.created.strftime('%d.%m.%Y at %H:%M') }}
+        <br>
+        <br>
+        {{topic.content}}
+      </div>
+    </div>
+  </div>
+  <div class="col-md-2">
+  </div>
+</div>
+
+{% for comment in comments %}
+<div class="row">
+  <div class="col-md-2">
+  </div>
+  <div class="col-md-8">
+    <div class="panel panel-info">
+      <div class="panel-heading">{{comment.title}} | {{comment.author_email}}</div>
+      <div class="panel-body">
+        Created: {{ comment.created.strftime('%d.%m.%Y at %H:%M') }}
+        <br>
+        <br>
+        {{comment.content}}
+      </div>
+    </div>
+  </div>
+  <div class="col-md-2">
+  </div>
+</div>
+{% endfor %}
+
+<!-- add comment -->
+
+<div class="row">
+  <div class="col-md-2">
+  </div>
+  <div class="col-md-8">
+    <form class="" action="/topic/{{ topic.key.id() }}/comment/add" method="post">
+      <input type="hidden" name="csrf_token" value="{{csrf_token}}">
+      <div class="form-group">
+          <label>Your comment</label>
+          <textarea name="comment" class="form-control" rows="6" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-success">Submit comment</button>
+    </form>
+    <br>
+    <div class="">
+      {% if user  %}
+        {% if topic.author_email == user.email() or user.admin  %}
+          <form action="/topic/{{topic.key.id()}}/delete" method="post">
+            <input type="hidden" name="csrf_token" value="{{csrf_token}}">
+            <button class="btn btn-danger">Delete topic</button>
+          </form>
+        {% endif  %}
+      {% endif %}
+    </div>
+  </div>
+  <div class="col-md-2">
+  </div>
+</div>
+
+{% endblock topicDetails %}

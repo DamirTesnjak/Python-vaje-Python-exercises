@@ -1,0 +1,27 @@
+.jumbotron {
+  background: #99bbff;
+  color: white;
+  box-shadow: 2px 2px 2px grey;
+}
+
+table {
+  width: 100%;
+  box-shadow: 2px 2px 2px grey;
+}
+
+td, th {
+  padding: 5px;
+}
+
+th {
+  background: #99bbff;
+  color: white;
+}
+
+tr:nth-child(even){
+  background: #e6e6e6;
+}
+
+textarea {
+  width: 100%;
+}
